@@ -1,0 +1,8 @@
+spath() {
+   stack path | sed -r "s/$1: *(.*)$/\1/"
+}
+bindir=$(spath local-install-root)/bin
+execname=$(sed -r 's/^executable +(.*) *$/\1/')
+
+echo $bindir
+echo $execname
